@@ -5,3 +5,24 @@
     turbo_method: :delete,
     tubo_cofirm:"Are you sure"
 } %>
+
+<% @article.comments.each do |comment|%>
+<h1>Commenter</h1>
+<h2><%=comment.commenter%></h2>
+<h2>Comment</h2>
+<h3><%=comment.body%></h3>
+<%end%>
+
+<%=form_with model: [@article ,@article.comments.build] do |form| %>
+<div>
+<%= form.label :commenter%>
+<%= form.text_field :commenter%>
+</div>
+<div>
+<%= form.label :body%>
+<%= form.text_area :body%>
+</div>
+<%=form.submit%>
+<%end%>
+
+
