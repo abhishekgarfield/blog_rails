@@ -1,0 +1,7 @@
+<h1><%=@article.title%></h1>
+<h2><%=@article.body%>
+<%= link_to "edit" , edit_article_path(@article) %>
+<%= link_to "delete" , "/articles/#{@article[:id]}",data:{
+    turbo_method: :delete,
+    tubo_cofirm:"Are you sure"
+} %>
