@@ -17,6 +17,9 @@
 <div>
 <%= form.label :commenter%>
 <%= form.text_field :commenter%>
+<% @comment.errors.full_messages_for(:commenter).each do |message|%>
+<div><%=message%></div>
+<%end%>
 </div>
 <div>
 <%= form.label :body%>
